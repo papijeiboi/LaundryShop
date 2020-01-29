@@ -60,7 +60,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Username"
+            android:hint="Email"
 
             android:theme="@style/EditTextHint">
 
@@ -85,11 +85,63 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:imeOptions="actionNext"
+                android:imeOptions="actionDone"
                 android:inputType="textPassword"
                 android:textColor="@color/textIcons"
                 android:textSize="18sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_landing_sign_in"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_btn"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="Sign In"
+        android:textAllCaps="false"
+        android:textColor="@color/textIcons"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/btn_landing_sign_up"
+            android:padding="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/open_sans_regular"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:text="Sign Up"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/btn_landing_forgot_password"
+            android:padding="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/open_sans_regular"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:text="Forgot Password?"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp" />
+
+
+    </LinearLayout>
+
+
 </LinearLayout>
