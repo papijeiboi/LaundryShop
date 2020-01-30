@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@drawable/bg_splash_screen">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/drawer_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/open_sans_regular"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:padding="15dp"
+            android:text="View Profile"
+            android:textColor="@color/textIcons"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/help_drawer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/open_sans_regular"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:padding="15dp"
+            android:text="Help"
+            android:textColor="@color/textIcons"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/about_drawer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/open_sans_regular"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:padding="15dp"
+            android:text="About"
+            android:textColor="@color/textIcons"
+            android:textSize="18sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/log_out"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/open_sans_regular"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:padding="15dp"
+            android:text="Logout"
+            android:textColor="@color/textPrimary"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+
+</FrameLayout>
