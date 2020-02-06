@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.jemoje.laundryreservationppm">
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -8,11 +11,16 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".activities.ProfileActivity"></activity>
         <activity android:name=".activities.AboutActivity" />
         <activity android:name=".activities.SignUpActivity" />
-        <activity android:name=".activities.MainMenuActivity" />
+        <activity
+            android:name=".activities.MainMenuActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing" />
         <activity android:name=".activities.LandingActivity" />
         <activity android:name=".activities.SplashScreenActivity">
             <intent-filter>

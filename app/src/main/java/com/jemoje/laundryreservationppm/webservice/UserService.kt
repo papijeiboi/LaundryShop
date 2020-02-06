@@ -1,13 +1,12 @@
 package com.jemoje.laundryreservationppm.webservice
 
 import com.google.gson.GsonBuilder
+import com.jemoje.laundryreservationppm.model.ReservationResponse
 import com.jemoje.laundryreservationppm.model.UserResponse
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface UserService {
 
@@ -20,11 +19,26 @@ interface UserService {
     ): retrofit2.Call<UserResponse>
 
     @FormUrlEncoded
-    @POST("login-link")
+    @POST("/api/login")
     fun login(
         @Field("email") username: String,
         @Field("password") password: String
     ): retrofit2.Call<UserResponse>
+
+    @GET("/api/shop")
+    fun getReservation(
+        @Query("sort_order") sortOrder: String,
+        @Header("Accept") accept: String,
+        @Header("Authorization") authHeader: String
+    ): retrofit2.Call<ReservationResponse>
+
+    @GET("/api/shop")
+    fun getSearchReservation(
+        @Query("search") search: String,
+        @Query("sort_order") sortOrder: String,
+        @Header("Accept") accept: String,
+        @Header("Authorization") authHeader: String
+    ): retrofit2.Call<ReservationResponse>
 
 
     companion object Factory {
