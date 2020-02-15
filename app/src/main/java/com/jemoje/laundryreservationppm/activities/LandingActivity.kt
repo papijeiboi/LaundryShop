@@ -19,6 +19,7 @@ import com.skydoves.powerspinner.IconSpinnerItem
 import kotlinx.android.synthetic.main.activity_landing.*
 import retrofit2.Call
 import retrofit2.Response
+import java.io.IOException
 
 class LandingActivity : AppCompatActivity() {
     private val TAG = "LandingActivity"
@@ -107,7 +108,7 @@ class LandingActivity : AppCompatActivity() {
             }
 
             override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
-                if (response.isSuccessful){
+
                     when(response.code()){
                         200 -> {
                             val userResponse: UserResponse? = response.body()
@@ -143,10 +144,7 @@ class LandingActivity : AppCompatActivity() {
                             displayDialog("Invalid Email or Password")
                         }
                     }
-                }else{
-                    Log.e(TAG, " isNotSuccessful: ${response.errorBody()}")
-                    displayDialog("Something went wrong!")
-                }
+
                 progress_layout_landing.visibility = View.GONE
             }
         })

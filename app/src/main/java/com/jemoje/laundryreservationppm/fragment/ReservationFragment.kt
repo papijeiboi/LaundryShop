@@ -71,7 +71,6 @@ class ReservationFragment : Fragment() {
                 call: Call<ReservationResponse>,
                 response: Response<ReservationResponse>
             ) {
-                if (response.isSuccessful) {
                     when {
                         response.code() == 200 -> {
 
@@ -94,9 +93,6 @@ class ReservationFragment : Fragment() {
                             Log.e(TAG, "callWebService responseCode: ${response.errorBody()}")
                         }
                     }
-                } else {
-                    Log.e(TAG, "callWebService onResponse: Something went wrong!")
-                }
             }
         })
 
@@ -156,7 +152,7 @@ class ReservationFragment : Fragment() {
             false
         )
         realView.rv_shops.layoutManager = mLayoutManagerHome
-        realView.rv_shops.adapter = reservationAdapter
+//        realView.rv_shops.adapter = reservationAdapter
     }
 
 

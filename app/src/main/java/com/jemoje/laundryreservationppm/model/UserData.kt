@@ -29,5 +29,5 @@ class UserData {
     var deletedAt: String? = null
 
     @SerializedName("shops")
-    var shops: MutableList<String>? = null
+    var shops: MutableList<ShopData>? = null
 }

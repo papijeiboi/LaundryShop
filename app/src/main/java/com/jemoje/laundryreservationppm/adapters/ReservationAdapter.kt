@@ -1,13 +1,16 @@
 package com.jemoje.laundryreservationppm.adapters
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.jemoje.laundryreservationppm.R
+import com.jemoje.laundryreservationppm.activities.MachineActivity
 import com.jemoje.laundryreservationppm.fragment.ReservationFragment
 import com.jemoje.laundryreservationppm.model.ReservationResponseData
 
@@ -40,6 +43,20 @@ class ReservationAdapter constructor(
         holder.shopsClosing.text = reservationDataList[position].closingTime
         holder.shopsStartDay.text = reservationDataList[position].startDay
         holder.shopsEndDay.text = reservationDataList[position].endDay
+
+        holder.itemView.setOnClickListener {
+            //            holder.itemView.startAnimation(AnimationUtils.loadAnimation(reservationFragment.activity, R.anim.image_click))
+
+
+            val intent = Intent(reservationFragment.activity, MachineActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            intent.putExtra("machine_id", reservationDataList[position].id)
+            reservationFragment.activity!!.applicationContext.startActivity(intent)
+            reservationFragment.activity!!.overridePendingTransition(
+                R.anim.enter_from,
+                R.anim.enter_to
+            )
+        }
     }
 
     class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

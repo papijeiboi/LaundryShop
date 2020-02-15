@@ -1,5 +1,6 @@
 package com.jemoje.laundryreservationppm.activities
 
+import android.content.ContextWrapper
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.core.view.GravityCompat
 import com.jemoje.laundryreservationppm.R
 import com.jemoje.laundryreservationppm.fragment.MyReservationFragment
 import com.jemoje.laundryreservationppm.fragment.ReservationFragment
+import com.pixplicity.easyprefs.library.Prefs
 import kotlinx.android.synthetic.main.activity_main_menu.*
 import kotlinx.android.synthetic.main.layout_drawer_custom.*
 
@@ -18,6 +20,13 @@ class MainMenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
+
+        Prefs.Builder()
+            .setContext(this)
+            .setMode(ContextWrapper.MODE_PRIVATE)
+            .setPrefsName(packageName)
+            .setUseDefaultSharedPreference(true)
+            .build()
 
         initBottomNav()
 
