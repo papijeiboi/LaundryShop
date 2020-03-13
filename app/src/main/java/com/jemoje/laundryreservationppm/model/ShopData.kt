@@ -12,7 +12,7 @@ class ShopData {
     var userId: String? = null
 
     @SerializedName("shop_name")
-    var email: String? = null
+    var shopName: String? = null
 
     @SerializedName("price_type")
     var priceType: String? = null

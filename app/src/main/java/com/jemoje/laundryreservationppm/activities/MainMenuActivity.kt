@@ -32,13 +32,13 @@ class MainMenuActivity : AppCompatActivity() {
 
         val drawerClicks = View.OnClickListener {
             when(it){
-                drawer_profile ->{
-                    toggle()
-                    val intent = Intent(applicationContext, ProfileActivity::class.java)
-                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                    applicationContext.startActivity(intent)
-                    overridePendingTransition(R.anim.enter_from, R.anim.enter_to)
-                }
+//                drawer_profile ->{
+//                    toggle()
+//                    val intent = Intent(applicationContext, ProfileActivity::class.java)
+//                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+//                    applicationContext.startActivity(intent)
+//                    overridePendingTransition(R.anim.enter_from, R.anim.enter_to)
+//                }
 
                 drawer_about -> {
                     toggle()
@@ -49,7 +49,15 @@ class MainMenuActivity : AppCompatActivity() {
                 }
 
                 drawer_logout -> {
+                    Prefs.clear()
 
+                    runOnUiThread {
+                        finish()
+                        val intent = Intent(applicationContext, LandingActivity::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                        applicationContext.startActivity(intent)
+                        overridePendingTransition(R.anim.exit_from, R.anim.exit_to)
+                    }
                 }
 
                 btn_menu -> {
@@ -58,7 +66,7 @@ class MainMenuActivity : AppCompatActivity() {
             }
         }
 
-        drawer_profile.setOnClickListener(drawerClicks)
+//        drawer_profile.setOnClickListener(drawerClicks)
         drawer_about.setOnClickListener(drawerClicks)
         drawer_logout.setOnClickListener(drawerClicks)
         btn_menu.setOnClickListener(drawerClicks)

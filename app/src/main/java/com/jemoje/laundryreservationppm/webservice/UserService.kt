@@ -10,11 +10,13 @@ import retrofit2.http.*
 interface UserService {
 
     @FormUrlEncoded
-    @POST("register-link")
+    @POST("/api/register")
     fun register(
+        @Field("name") name: String,
         @Field("email") username: String,
         @Field("password") password: String,
-        @Field("password_confirmation") password_confirmation: String
+        @Field("password_confirmation") password_confirmation: String,
+        @Header("Accept") accept: String
     ): retrofit2.Call<UserResponse>
 
     @FormUrlEncoded
@@ -67,6 +69,12 @@ interface UserService {
         @Header("Accept") accept: String,
         @Header("Authorization") authHeader: String
     ):retrofit2.Call<ReservationLaundryResponse>
+
+    @GET("/api/my-reservation")
+    fun getMyReservation(
+        @Header("Accept") accept: String,
+        @Header("Authorization") authHeader: String
+    ):retrofit2.Call<MutableList<MyReservationResponse>>
 
 
     companion object Factory {

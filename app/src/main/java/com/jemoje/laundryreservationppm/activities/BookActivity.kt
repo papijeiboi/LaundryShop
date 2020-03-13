@@ -1,6 +1,7 @@
 package com.jemoje.laundryreservationppm.activities
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -184,13 +185,13 @@ class BookActivity : AppCompatActivity(), PrimeDatePickerBottomSheet.OnDayPicked
 
     private var reserveTimeBlocks: MutableList<TimeBlocksData> = ArrayList()
     fun selectedMakeFalse(position: Int) {
-        timeBlocksData[position].allowed = false
+        timeBlocksData[position].allowed = "selected"
         reserveTimeBlocks.add(timeBlocksData[position])
         rv_book_time.adapter!!.notifyDataSetChanged()
     }
 
     fun selectedMakeTrue(position: Int) {
-        timeBlocksData[position].allowed = true
+        timeBlocksData[position].allowed = "true"
         reserveTimeBlocks.remove(timeBlocksData[position])
         rv_book_time.adapter!!.notifyDataSetChanged()
     }
@@ -223,7 +224,14 @@ class BookActivity : AppCompatActivity(), PrimeDatePickerBottomSheet.OnDayPicked
                             val timeDisplay = fmt.parse(response.body()!!.reservedDate)
                             val fmtOut = SimpleDateFormat("d MMM yyyy")
                             val displayDate = fmtOut.format(timeDisplay)
-                            displayDialog("Successfully Reserved! @Machine # ${response.body()!!.machine!!.machineNumber} Date: $displayDate")
+
+                            val intent = Intent(this@BookActivity,SuccessActivity::class.java).apply {
+                                this.putExtra("displayDate", displayDate)
+                                this.putExtra("machineNumber", response.body()!!.machine!!.machineNumber)
+                            }
+                            startActivity(intent)
+                            overridePendingTransition(R.anim.enter_from, R.anim.enter_to)
+                            finish()
                         }
                         else -> {
                             Log.e(TAG, "callWebService responseCode: ${response.code()}")

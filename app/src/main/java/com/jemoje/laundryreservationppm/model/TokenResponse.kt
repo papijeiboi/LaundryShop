@@ -8,7 +8,7 @@ class TokenResponse {
     var tokenType: String? = null
 
     @SerializedName("expires_in")
-    var expiresIn: String? = null
+    var expiresIn: Int? = null
 
     @SerializedName("access_token")
     var accessToken: String? = null

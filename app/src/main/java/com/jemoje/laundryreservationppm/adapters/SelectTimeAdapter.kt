@@ -45,19 +45,22 @@ class SelectTimeAdapter constructor(
         val fmtOut = SimpleDateFormat("h:mm a")
         holder.timeTitle.text = fmtOut.format(timeDisplay)
 
-        if (timeDataList[position].allowed == true){
+        if (timeDataList[position].allowed == "true") {
             holder.timeQuarter.setBackgroundColor(bookActivity.resources.getColor(R.color.colorWhite))
-        }else{
+        } else if (timeDataList[position].allowed == "selected"){
             holder.timeQuarter.setBackgroundColor(bookActivity.resources.getColor(R.color.colorPrimaryDark))
+        } else if (timeDataList[position].allowed == "false"){
+            holder.timeQuarter.setBackgroundColor(bookActivity.resources.getColor(R.color.textSecondary))
+//            holder.timeQuarter.isEnabled = false
         }
 
         holder.timeQuarter.setOnClickListener {
-            if (!timeDataList[position].allowed!!){
+            if (timeDataList[position].allowed!! != "true") {
                 bookActivity.selectedMakeTrue(position)
-                holder.timeQuarter.setBackgroundColor(bookActivity.resources.getColor(R.color.colorWhite))
-            }else{
+//                holder.timeQuarter.setBackgroundColor(bookActivity.resources.getColor(R.color.colorWhite))
+            } else {
                 bookActivity.selectedMakeFalse(position)
-                holder.timeQuarter.setBackgroundColor(bookActivity.resources.getColor(R.color.colorPrimaryDark))
+//                holder.timeQuarter.setBackgroundColor(bookActivity.resources.getColor(R.color.colorPrimaryDark))
             }
 
         }

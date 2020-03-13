@@ -13,18 +13,18 @@
         android:orientation="vertical">
 
 
-        <TextView
-            android:id="@+id/drawer_profile"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:focusable="true"
-            android:fontFamily="@font/open_sans_regular"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:padding="15dp"
-            android:text="View Profile"
-            android:textColor="@color/textIcons"
-            android:textSize="18sp" />
+<!--        <TextView-->
+<!--            android:id="@+id/drawer_profile"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:clickable="true"-->
+<!--            android:focusable="true"-->
+<!--            android:fontFamily="@font/open_sans_regular"-->
+<!--            android:foreground="?android:attr/selectableItemBackground"-->
+<!--            android:padding="15dp"-->
+<!--            android:text="View Profile"-->
+<!--            android:textColor="@color/textIcons"-->
+<!--            android:textSize="18sp" />-->
 
         <TextView
             android:id="@+id/drawer_about"

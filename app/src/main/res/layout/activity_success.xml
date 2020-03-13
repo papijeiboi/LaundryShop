@@ -19,29 +19,73 @@
         android:textColor="@color/colorWhite"
         android:textSize="25sp" />
 
-    <LinearLayout
-        android:gravity="center"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_gravity="center|top"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="See you at the shop"
+        android:textAlignment="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="25sp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/open_sans"
-            android:textColor="@color/colorWhite"
-            android:textSize="25sp"
-            android:text="Machine Number: "
-            />
+
+    <FrameLayout
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/ic_machine_number"
+            android:tint="@color/white" />
 
         <TextView
             android:id="@+id/tv_success_machine_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/open_sans_bold"
+            android:text="1"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+    </FrameLayout>
+
+    <ImageView
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_calendar"
+        android:tint="@color/white" />
+
+
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/tv_success_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/open_sans"
+            android:text="1"
             android:textColor="@color/colorWhite"
-            android:textSize="25sp"
-            android:text="1"/>
-    </LinearLayout>
+            android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/btn_success_done"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/bg_btn"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="Done"
+        android:textAllCaps="false"
+        android:textColor="@color/textIcons"
+        android:textSize="18sp" />
 
 </LinearLayout>

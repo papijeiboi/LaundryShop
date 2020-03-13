@@ -11,5 +11,5 @@ class TimeBlocksData {
     var endTime: String? = null
 
     @SerializedName("allowed")
-    var allowed: Boolean? = null
+    var allowed: String? = null
 }
